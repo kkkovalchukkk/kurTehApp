@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {TailSpin} from "react-loader-spinner";
+import doc from "../../assets/docs/doc.pdf";
 
 const ClientPage = ({currentlogin, userId, showPopup, getResponded}) => {
   const [data, setData] = useState([]);
@@ -122,7 +123,7 @@ const ClientPage = ({currentlogin, userId, showPopup, getResponded}) => {
                 className='card__btn'
                 onClick={() => {
                   showPopup();
-                  getResponded(card._id)
+                  getResponded(card._id);
                 }}
               >
                 Подробнее
@@ -148,37 +149,45 @@ const ClientPage = ({currentlogin, userId, showPopup, getResponded}) => {
           visible={true}
         />
       ) : (
-        <form
-          className='card-form'
-          onSubmit={sendApplication}
-        >
-          <h3 className='card-form__heading'>Добавить новую заявку</h3>
-          <label>
-            Заголовок заявки
-            <input
-              name='heading'
-              placeholder='Введите заголовок заявки'
-              type='text'
-            />
-          </label>
-          <label>
-            Краткое описание заявки
-            <input
-              type='text'
-              name='description'
-              placeholder='Введите краткое описание заявки'
-            />
-          </label>
-          <label>
-            Укажите через пробел ключевые слова к заявке
-            <input
-              type='text'
-              name='tags'
-              placeholder='Введите ключевые слова'
-            />
-          </label>
-          <button className='card-form__btn'>Добавить заявку</button>
-        </form>
+        <>
+          <form
+            className='card-form'
+            onSubmit={sendApplication}
+          >
+            <h3 className='card-form__heading'>Добавить новую заявку</h3>
+            <label>
+              Заголовок заявки
+              <input
+                name='heading'
+                placeholder='Введите заголовок заявки'
+                type='text'
+              />
+            </label>
+            <label>
+              Краткое описание заявки
+              <input
+                type='text'
+                name='description'
+                placeholder='Введите краткое описание заявки'
+              />
+            </label>
+            <label>
+              Укажите через пробел ключевые слова к заявке
+              <input
+                type='text'
+                name='tags'
+                placeholder='Введите ключевые слова'
+              />
+            </label>
+            <button className='card-form__btn'>Добавить заявку</button>
+          </form>
+          <a
+            href={doc}
+            className='doc-btn'
+          >
+            Получить договор
+          </a>
+        </>
       )}
       {error.status && <p className='error-text'>{error.text}</p>}
     </>

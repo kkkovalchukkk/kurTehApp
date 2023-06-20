@@ -17,6 +17,7 @@ import PopupRegisterWindow from "./UI/PopupRegisterWindow";
 import PopupLoginWindow from "./UI/PopupLoginWindow/";
 
 import Auth from "./components/Auth";
+import AdminPage from "./components/AdminPage/AdminPage";
 
 function App() {
   const [registerPopupIsOpened, setRegisterPopupIsOpened] = useState(false);
@@ -71,6 +72,11 @@ function App() {
     setRole("");
     setUserId("");
   };
+
+
+  if (window.location.pathname === "/admin") {
+    return <AdminPage />;
+  }
 
   if (isAuth) {
     return (

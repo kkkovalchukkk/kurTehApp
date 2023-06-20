@@ -153,6 +153,17 @@ app.get("/applications/r/:id", (req, res) => {
     });
 });
 
+app.delete("/users/:id", (req, res) => {
+  const userId = req.params.id;
+  User.findByIdAndDelete(userId)
+    .then(() => {
+      res.status(200).json({message: "Юзер успешно удалена"});
+    })
+    .catch((error) => {
+      res.status(500).json({error: "Ошибка при удалении юзера"});
+    });
+});
+
 app.delete("/applications/:id", (req, res) => {
   const applicationId = req.params.id;
   Application.findByIdAndDelete(applicationId)
