@@ -128,7 +128,7 @@ const PopupRegisterWindow = ({registerPopupIsOpened, hidePopup, setIsAuth, setCu
               <input
                 name='email'
                 id='email_input'
-                type='text'
+                type='email'
                 placeholder='Введите ваш email'
                 className='form__input'
               />
