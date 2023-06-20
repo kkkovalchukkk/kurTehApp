@@ -30,7 +30,7 @@ const StudentPage = ({userId}) => {
   };
   const respond = (data) => {
     setIsLoading(true);
-    fetch(`http://localhost:3000/applications/${activeApplicationId}/respond`, {
+    fetch(`http://kurteh.na4u.ru/applications/${activeApplicationId}/respond`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -57,7 +57,7 @@ const StudentPage = ({userId}) => {
   };
   useEffect(() => {
     setIsLoading(true);
-    fetch("http://localhost:3000/applications")
+    fetch("http://kurteh.na4u.ru/applications")
       .then((response) => {
         if (!response.ok) {
           setIsLoading(false);

@@ -39,7 +39,7 @@ const PopupRegisterWindow = ({registerPopupIsOpened, hidePopup, setIsAuth, setCu
       role: typeInput.value,
     };
 
-    fetch("http://localhost:3000/register", {
+    fetch("http://kurteh.na4u.ru/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -39,7 +39,7 @@ const Auth = ({avatar, logOut}) => {
 
   const getResponded = (id) => {
     console.log(id);
-    fetch(`http://localhost:3000/applications/r/${id}`)
+    fetch(`http://kurteh.na4u.ru/applications/r/${id}`)
       .then((res) => {
         if (!res.ok) {
           throw new Error("Возникла ошибки при получении откликов");

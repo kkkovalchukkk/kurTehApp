@@ -8,8 +8,9 @@ const AdminPage = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
+    
     setIsLoading(true);
-    fetch(`http://localhost:3000/applications`)
+    fetch(`http://kurteh.na4u.ru/applications`)
       .then((res) => {
         if (!res.ok) {
           setIsLoading(false);
@@ -31,7 +32,7 @@ const AdminPage = () => {
 
   const deleteApplication = (id) => {
     setIsLoading(true);
-    fetch(`http://localhost:3000/applications/${id}`, {
+    fetch(`http://kurteh.na4u.ru/applications/${id}`, {
       method: "DELETE",
     })
       .then((res) => {
@@ -54,7 +55,7 @@ const AdminPage = () => {
   };
   const deleteUser = (id) => {
     setIsLoading(true);
-    fetch(`http://localhost:3000/users/${id}`, {
+    fetch(`http://kurteh.na4u.ru/users/${id}`, {
       method: "DELETE",
     })
       .then((res) => {
@@ -82,7 +83,7 @@ const AdminPage = () => {
 
   const getUsers = () => {
     setIsLoading(true);
-    fetch(`http://localhost:3000/users`)
+    fetch(`http://kurteh.na4u.ru/users`)
       .then((res) => {
         if (!res.ok) {
           setIsLoading(false);

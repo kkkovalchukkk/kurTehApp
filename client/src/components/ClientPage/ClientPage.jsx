@@ -9,7 +9,7 @@ const ClientPage = ({currentlogin, userId, showPopup, getResponded}) => {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch(`http://localhost:3000/applications/${userId}`)
+    fetch(`http://kurteh.na4u.ru/applications/${userId}`)
       .then((res) => {
         if (!res.ok) {
           setIsLoading(false);
@@ -31,7 +31,7 @@ const ClientPage = ({currentlogin, userId, showPopup, getResponded}) => {
   const deleteApplication = (id) => {
     // setData(data.filter);
     setIsLoading(true);
-    fetch(`http://localhost:3000/applications/${id}`, {
+    fetch(`http://kurteh.na4u.ru/applications/${id}`, {
       method: "DELETE",
     })
       .then((res) => {
@@ -75,7 +75,7 @@ const ClientPage = ({currentlogin, userId, showPopup, getResponded}) => {
       tags: tagInput.value.trim().split(" "),
     };
 
-    fetch("http://localhost:3000/applications", {
+    fetch("http://kurteh.na4u.ru/applications", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -22,7 +22,7 @@ const PopupLoginWindow = ({loginPopupIsOpened, hideLoginPopup, setCurrentlogin, 
       password: passInput.value,
     };
 
-    fetch("http://localhost:3000/login", {
+    fetch("http://kurteh.na4u.ru/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
