@@ -15,6 +15,7 @@ import TeamSection from "./components/TeamSection";
 import Footer from "./components/Footer";
 import PopupRegisterWindow from "./UI/PopupRegisterWindow";
 import PopupLoginWindow from "./UI/PopupLoginWindow/";
+import Cases from "./components/Cases/Cases";
 
 import Auth from "./components/Auth";
 import AdminPage from "./components/AdminPage/AdminPage";
@@ -73,7 +74,6 @@ function App() {
     setUserId("");
   };
 
-
   if (window.location.pathname === "/admin") {
     return <AdminPage />;
   }
@@ -120,6 +120,7 @@ function App() {
           showLoginPopup={showLoginPopup}
         />
         <OurSection />
+        <Cases />
         <TeamSection showRegisterPopup={showRegisterPopup} />
       </main>
       <Footer />

@@ -1,6 +1,14 @@
 import React from "react";
 
 const ProjectSection = () => {
+  const smoothScrollToSection = (e) => {
+    e.preventDefault();
+    const href = "#" + e.target.href.split("#")[1];
+    document.querySelector(href).scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
   return (
     <section className='project-section'>
       <div className='wrapper project-section__wrapper'>
@@ -32,7 +40,8 @@ const ProjectSection = () => {
           </div>
         </div>
         <a
-          href='#'
+          href='#cases-section'
+          onClick={smoothScrollToSection}
           className='btn main-btn project-section__main-btn'
         >
           Посмотреть наши проекты

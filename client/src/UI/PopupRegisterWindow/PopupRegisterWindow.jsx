@@ -5,6 +5,7 @@ import {TailSpin} from "react-loader-spinner";
 const PopupRegisterWindow = ({registerPopupIsOpened, hidePopup, setIsAuth, setCurrentlogin, setRole, setUserId}) => {
   const [error, setError] = useState({});
   const [isLoading, setIsLoading] = useState(false);
+  const [name, setName] = useState("");
 
   const register = async (e) => {
     e.preventDefault();
@@ -105,6 +106,11 @@ const PopupRegisterWindow = ({registerPopupIsOpened, hidePopup, setIsAuth, setCu
                 type='text'
                 placeholder='Введите ваше имя'
                 className='form__input'
+                onChange={(event) => {
+                  const value = event.target.value;
+                  const onlyLettersValue = value.replace(/[^A-Za-zА-Яа-яЁё]/g, "");
+                  event.target.value = onlyLettersValue;
+                }}
               />
             </label>
             <label className='form__label'>
